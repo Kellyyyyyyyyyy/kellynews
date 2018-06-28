@@ -1,0 +1,478 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", "Apple LiGothic Medium", Roboto, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            background-color: #eeeeed;
+        }
+
+        a {
+            color: #2d2d2d;
+            text-decoration: none;
+            border-bottom: 1px solid #c71b0a;
+        }
+
+        header,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            header {
+                width: 678px;
+            }
+
+            article,
+            article>header {
+                max-width: 678px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            header {
+                width: 900px;
+            }
+
+            article,
+            article>header {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+        }
+
+        header>table {
+            width: 100%;
+			background-color:#eeeeed;
+        }
+
+        article>header>span {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.25;
+        }
+
+        article>header>h1 {
+            margin-top: 11px;
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 1.32;
+        }
+
+        article {
+            color: #2d2d2d;
+        }
+
+        article>figure {
+            margin: 40px 0 0 0;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>figure {
+                width: 678px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: left;
+                width: 300px;
+                margin-top: 40px;
+                margin-right: 40px;
+                margin-bottom: 50px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>figure {
+                width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: right;
+                width: 360px;
+                margin-top: 40px;
+                margin-left: 40px;
+                margin-bottom: 50px;
+            }
+        }
+
+        article>p,
+        article>h2,
+        article>blockquote,
+        article>ul,
+        article figcaption,
+        article>div,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header,
+            article>ul {
+                width: 550px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header {
+                max-width: 756px;
+            }
+            article>ul {
+                width: 700px;
+            }
+        }
+
+        article>ul {
+            width: 100%;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        article video,
+        article audio {
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        article>p,
+        article>blockquote {
+            font-size: 18px;
+            line-height: 2.0;
+            letter-spacing: 0.9px;
+            margin-top: 40px;
+        }
+
+        article>blockquote {
+            padding-left: 21px;
+            color: #6d6d6d;
+            border-left: 1px solid #6d6d6d;
+        }
+
+        article>h2 {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1.1px;
+            line-height: 1.64;
+            margin-top: 40px;
+        }
+
+        article figcaption {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #6d6d6d;
+            margin-top: 15px;
+        }
+
+        .header {
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 31px;
+                    }
+
+        .menu {
+            width: 31px;
+            height: 31px;
+                   }
+
+        .author {
+            margin-right: 30px;
+            font-size: 15px;
+            line-height: 2.25;
+        }
+
+        .introduction {
+            font-size: 22px;
+            line-height: 1.82;
+            letter-spacing: 1.6px;
+            text-align: justify;
+            margin-top: 30px;
+        }
+
+        .related-text {
+            font-size: 16px;
+            line-height: 2.25;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .related-items {
+            margin-bottom: 60px;
+        }
+
+        .related-item {
+            background-color: #e1e1e1;
+            margin-top: 20px;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .related-item>img {
+            width: 20%;
+            vertical-align: middle;
+        }
+
+        .related-item>div {
+            display: inline-block;
+            width: 70%;
+            padding-left: 20px;
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #bfbfbf;
+            min-height: 300px;
+        }
+
+        footer>table {
+            border-spacing: 45px;
+            width: 100%;
+        }
+
+        .footer-circle1 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #397a69;
+            margin: 0 auto;
+        }
+
+		.footer-circle2 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #cc8e24;
+            margin: 0 auto;
+        }
+
+		.footer-circle3 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #781c20;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+            color: #777;
+        }
+
+        .embed-box {
+            position: relative;
+            margin-top: 60px;
+        }
+        .embed-box > iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        @media screen and (max-width: 767px) {
+            table.hidden-on-mobile {
+                display: none;
+            }
+
+            table.shown-on-mobile {
+                display: table;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            table.hidden-on-mobile {
+                display: table;
+                max-width: 770px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            table.shown-on-mobile {
+                display: none;
+            }
+        }
+		.flex-footer{
+			display:flex;
+			justify-content:space-between;
+		}
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="logo"><img src="logo.png" alt="logo7pupu" class="logo"/>
+						</div>
+                    </td>
+                    <td style="width:22px;">
+                        <div class="menu"><img src="square.png" alt="bottom7pupu" class="menu"/></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </header>
+<div style="background-color:#b5b6b6">
+    <article>
+        <header>
+		<h1 style="padding-top:40px">雨中高歌　萬人同聲爭婚姻平權</h1>
+        </header>
+        <div style="margin-bottom:15px">
+            <span class="author">圖、文／
+                <b>
+                    <a>王若璞</a>
+                </b>
+            </span>
+        </div>
+
+        <div>
+            <img src="2.jpg" alt="leading image of this article" width="100%" />
+        </div>
+        <blockquote style="
+       margin-left:80px;
+       margin-right:50px;
+       padding-left:20px;
+       border-left:2px dashed #e96f6f;
+       box-sizing:border-box;
+       font-size:  25px;
+       color:#e96f6f
+       line-height: 2;
+       letter-spacing: 0.9px">
+       「你們手上的車票是到終點站的，絕對不可以中途下車！」
+       </blockquote>
+        <p>
+            葉永鋕母親的紀錄片投影在螢幕上，讓雨中堅守不肯離去的支持者紅了眼眶。同性婚姻修法一波三折， 「讓生命不再逝去，為婚姻平權站出來」音樂會10日在凱道開唱，逾20萬名不分性向、不分宗教的民眾齊心走上街頭，捍衛婚姻平權。
+        </p>
+        <p>
+            依據主辦單位統計，本次活動動員超過100台專車。現場不少民眾免費發送貼紙與旗幟，並在身上畫上七彩的顏料，一時之間凱道繽紛燦爛。音樂會開始前已經水洩不通，晚間傾盆大雨也不減支持者的熱情，民眾在雨中相依相偎，以「彩虹」一曲大合唱溫馨收尾。
+        </p>
+        <p>
+            國立政治大學傳播學院大一大二不分系的黃鍹茹與朋友以鋼筆手寫的方式設計貼紙，自掏腰包影印1000張貼紙。黃鍹茹同時也是參與傳播領域聯署的代表，受台灣同志諮詢熱線協會邀請上台，她表示：「每個人都是資訊的接收者與傳播者，不管身在性別哪一個光譜上，都應該站出來。」</p>
+        <div style="width:100%">
+            <div style="margin-top:40px">
+            <img src="1.jpg" alt="民眾遊行" width="100%" />
+        </div>
+        <figcaption>活動現場不少民眾免費發送貼紙與旗幟，並在身上畫上七彩的顏料，一時之間凱道繽紛燦爛。
+        </figcaption>
+        </div>
+        <p>
+            「我們走在歷史上正確的道路，我們要爭取平權，我們不該停止！」於慈濟大學交換的美籍學生克爾‧克勞（Cole Cloud）表示，音樂會拉近人與人的距離，而美國年輕世代對同性戀者相對更開明，他希望能為台灣婚姻平權盡一份力。國立臺灣海洋大學電機工程學系楊雲翔認為，相較於言語抗議，音樂更有力量與靈魂，能將情感傳遞出去。台中教育大學文化創意產業設計與營運學系的茆悌嘉覺得同性戀與常人無異，來參加音樂會是為追求平權理念，而不是為激起衝突。
+  
+  
+         </p>
+        
+         <p>
+             20多組藝人輪番上陣，用音樂傳達理念。藝人炎亞綸默默地隱身在人群，他認為比起上台唱歌，他更希望坐在台下成為參與的一份子。他提到，歷史上許多遭受歧視的族群，都是花很多心力走到平等的那天，「這也不是最後一個平權運動。」他認為未來仍有很多值得爭取的事情，也希望大家在抗爭中找到愛的價值。
+         </p>
+       
+
+        <div class="related-text" style="clear:both;margin-top:40px;margin-bottom:20px;">延伸閱讀</div>
+        
+		<ul class="related-items" style="padding-bottom:40px">
+            <li class="related-item">
+                <img src="india.jpg"></img>
+                <div>
+                <a href="http://www.unews.nccu.edu.tw/unews/%E5%8D%B0%E5%BA%A6%E5%A4%A7%E5%AD%B8%E7%94%9F%E7%94%A8%E4%BF%B3%E5%8F%A5%E8%A9%A9%EF%BC%8C%E6%89%93%E7%A0%B4%E6%9C%88%E7%B6%93%E7%A6%81%E5%BF%8C/">延伸閱讀一：筆鋒破知識藩籬 印生俳句解月經歧視</a>
+            </div>
+            </li>
+            <li class="related-item">
+                <img src="WC.JPG"></img>
+                <div>
+                        <a href="http://www.unews.nccu.edu.tw/unews/%EF%BC%88%EF%BD%86%EF%BC%89%E4%BD%9B%E5%B7%9E%E5%A4%A7%E5%AD%B8%E5%85%81%E8%A8%B1%E8%B7%A8%E6%80%A7%E5%88%A5%E5%AD%B8%E7%94%9F%E9%81%B8%E6%93%87%E7%AC%A6%E5%90%88%E6%80%A7%E5%90%91%E7%9A%84%E5%AE%BF/">延伸閱讀二：佛大選宿不設限 打造跨性別平等環境</a>
+                    
+                    
+
+
+                </div>
+            </li>
+        </ul>
+		
+    </article>
+	</div>
+    <footer style="background-color:#eeeeed">
+        <table class="shown-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle2"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="footer-circle3"></div>
+                        <div class="footer-text">多媒體專題</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">個人作品</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="hidden-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle2"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle3"></div>
+                        <div class="footer-text">多媒體專題</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">個人作品</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+</body>
+
+</html>
